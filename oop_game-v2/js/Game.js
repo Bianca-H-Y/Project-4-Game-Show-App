@@ -20,8 +20,8 @@
   * gameOver():
   */
  
- class phrase {
-    constructor (phrase) {
-        this.phrase = phrase
+ class game {
+    constructor (game) {
+        this.game = game
     }
 }
