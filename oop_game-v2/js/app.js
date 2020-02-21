@@ -12,4 +12,3 @@ logPhrase(game.getRandomPhrase());
  //Code working!
 */
 
-Next step 6
