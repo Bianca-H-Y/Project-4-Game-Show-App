@@ -1,7 +1,3 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Phrase.js */
-
  /**
   * Create a Phrase class w/ a constructor that recieves 1 property & 4 methods:
   * phrase property :
@@ -22,8 +18,8 @@
 
   class Phrase {
       //constructor with 1 parameter
-      constructor (phrase) {
-        //this.phrase is set to the phrase parameter
-        this.phrase = phrase
+      constructor(phrase) {
+        //this.phrase is set to the phrase parameter and makes all lowercase
+        this.phrase = phrase.toLowerCase();
       }
-    }
+    };

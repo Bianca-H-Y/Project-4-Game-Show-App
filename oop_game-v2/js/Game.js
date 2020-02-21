@@ -1,8 +1,4 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Game.js */
-
-  /**
+ /**
   * Create a Game class w/ a constructor that recieves 3 property & 6 methods:
   * missed:
   * track the number of missed guesses w/ initial value = 0
@@ -21,6 +17,24 @@
   */
  
  class Game {
-    //constructor (game) {
-       // this.game = game
+    constructor() {
+        // 3 properties in the constructor
+       this.missed = 0
+       this.phrases = [
+           new Phrase ('An Arm and A Leg'),
+           new Phrase ('A Piece of Cake'),
+           new Phrase ('To Live and Let Live'),
+           new Phrase ('Heart and Soul'),
+           new Phrase ('The Young and The Restless'),
+       ]
+       this.activePhrases = null
     }
+   //getRandomPhrase() method: randomly retrieves a phrase
+   getRandomPhrase() {
+       //use let because this variable should accept change
+       //I will want the length of the array (0-4) randomized
+       //Round down the random number: math.random & floor
+       let randomPhrase = Math.floor(Math.random() * this.phrases.length);
+       return this.phrases[randomPhrase]
+   }
+};
