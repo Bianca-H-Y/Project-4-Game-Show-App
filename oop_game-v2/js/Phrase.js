@@ -20,8 +20,10 @@
   * then replace e/ match with hide CSS class with Show CSS class
   */
 
-  class phrase {
+  class Phrase {
+      //constructor with 1 parameter
       constructor (phrase) {
-          this.phrase = phrase
+        //this.phrase is set to the phrase parameter
+        this.phrase = phrase
       }
-  }
+    }

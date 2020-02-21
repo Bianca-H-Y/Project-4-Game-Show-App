@@ -12,16 +12,15 @@
   * current phrase being guess; initial value = null within startGame() method, this property
   * should be set to the phrase object retuned from a call in the getRandomPhrase() method.
   * Methods
-  * startGame(): hides the start screen
-  * getRandomPhrase():
+  * startGame(): hides the start screen, calls getRandomPhrase() & sets active phrase property
+  * getRandomPhrase(): randomly retrieves a phrase
   * handleInteraction():
   * removeLife():
   * checkForWin():
   * gameOver():
   */
  
- class game {
-    constructor (game) {
-        this.game = game
+ class Game {
+    //constructor (game) {
+       // this.game = game
     }
-}
