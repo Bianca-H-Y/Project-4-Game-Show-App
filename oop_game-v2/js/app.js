@@ -11,12 +11,8 @@ logPhrase(game.getRandomPhrase());
 
  //Code working!
 */
-const game = new Game();
-game.getRandomPhrase().addPhraseToDisplay();
-
 /** 
 const game = new Game();
-const randomPhrase= game.getRandomPhrase();
-const phrase = new Phrase(randomPhrase.phrase);
-phrase.addPhraseToDisplay();
+game.getRandomPhrase().addPhraseToDisplay();
+note:step 6 pass
 */
