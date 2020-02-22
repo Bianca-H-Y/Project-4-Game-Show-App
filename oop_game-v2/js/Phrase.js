@@ -29,15 +29,16 @@
       const phraseDiv = document.querySelector('#phrase ul');
        
       // https://teamtreehouse.com/library/adding-a-method-solution
-      //use MDN. split tp count words based on spaces
-      const splitPhrase = this.phrase.split(' ')
+      //use MDN. split to count words based on spaces
+      const fullArrayPhrase = this.phrase.split('');
+
     
       //https://teamtreehouse.com/library/javascript-array-iteration-methods/array-iteration/practice-foreach
       //iterate over the lettered array creating an li element for each
       //example html splits each phrase into a letter--li element
-      splitPhrase.forEach(letter => {
+      fullArrayPhrase.forEach(phraseLetter => {
       const li = document.createElement('li');
-      if (letter ===' ') {
+      if (phraseLetter ===' ') {
       //unit 3 dealt with a similar example in: https://teamtreehouse.com/library/refactor-1-create-list-items
       //set the value of the li element and get the text content:
       //https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
@@ -45,7 +46,7 @@
       li.textContent = ' ';
     }  else { //use placeholder to hide letter
       li.className = 'hide letter ${letter}';
-      li.textContent = letter;
+      li.textContent = phraseLetter;
     }
     phraseDiv.appendChild(li);
 
