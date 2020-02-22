@@ -38,3 +38,5 @@
        return this.phrases[randomPhrase]
    }
 };
+
+step 7
