@@ -69,16 +69,17 @@
   *     if win show all letter in phrase or lost if player loose all hearts
   *     message about winning or loosing to display on screen
   */
-
-  /** 
-    handleInteraction() { //the paremeter is going to be letter b/c we want the actions to happen on letters
-        //handles logic and branching to all following methods
-        removeLife(): removes a heart witha miss--end game by calling gameOver method
-  * checkForWin():  checks to see if player has revealed all letters (win)
-  * gameOver(): displays original start screen overlay and updats h1 with win or loose message
-  *     from the CSS start with win or loose
+  // handleInteraction calls all the 3 methids above
+     // paremeter is going to be letter b/c we want the actions to happen on letters
+     handleInteraction(letter) {
+        //checks to see if player has revealed all letters 
+        this.checkForWin();
+         // method removes a heart with a players miss
+         this.removeLife();
+        //displays original start screen overlay w/ win or loose message; set to true/not a loss in this method
+        this.gameOver(true);
  }
- */
+
  
  //Below code: checkForWin():  checks to see if player has revealed all letters 
  //game.checkForWin() working for false & true 
@@ -99,7 +100,7 @@
     //remove life from scoreboard
     removeLife() {
         // removed const variable and replaced with let for all the hearts <li class="tries"><img src="images/liveHeart.png"
-        let hearts = document.querySelectorAll('img');
+        let hearts = document.querySelectorAll('[src="images/liveHeart.png"]');
         //take the value of hearts available against the hearts left from the constroctor (this.missed) 
         let heartsLeft = hearts.length - this.missed;
         //if the player tries and misses than the players looses a heart/replace with lostheart.png
@@ -107,29 +108,41 @@
             hearts[this.missed].src= 'images/lostHeart.png';
             //reduce hearts by one
             hearts -= 1;
+            this.miss +=1;
         }
         //when all 5 hearts = 0 then use gameove method to announce game lost
-        if (heartsLeft === 0){
+         else if (heartsLeft === 0){
+            //call the gameOver method if play has lost
             this.gameOver(false);
+        
+
         }
     }
+
    
     //gameOver() displays original start screen overlay and updats h1 with win or loose message
     //from the CSS start with win or loose
     gameOver(gameWon) {
+        const gameMessage = document.getElementById('game-over-message')
         //if the player looses then display the h1 CSS loose message
         if(gameWon === false) {
             //then display the h1 CSS loose message (.lose)
             overlay.style.className = 'lose';
+            //block the overlay
             overlay.style.display = 'flex';
-            
+            //create the message
+            gameMessage.textContent = 'Sorry, you lost!'
         } else if(gameWon === true) {
             //then display the h1 CSS win message (.win )
             overlay.style.className = 'win';
-            overlay.style.display = 'flex ';
-
+            //block the overlay
+            overlay.style.display = 'flex';
+            //create the message
+            gameMessage.textContent = 'Yay, you Won!'
         }
     }
+
+    
     
 };
 
