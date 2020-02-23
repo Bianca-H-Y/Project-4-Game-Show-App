@@ -122,6 +122,7 @@
    
     //gameOver() displays original start screen overlay and updats h1 with win or loose message
     //from the CSS start with win or loose
+    //game.removeLife() working to remove hearts & shows message at loss
     gameOver(gameWon) {
         const gameMessage = document.getElementById('game-over-message')
         //if the player looses then display the h1 CSS loose message
@@ -130,15 +131,15 @@
             overlay.style.className = 'lose';
             //block the overlay
             overlay.style.display = 'flex';
-            //create the message
-            gameMessage.textContent = 'Sorry, you lost!'
+            //create the message: game.gameOver(false) shows message
+            gameMessage.textContent = "Sorry, you lost! Click 'Start Game' to try again.";
         } else if(gameWon === true) {
             //then display the h1 CSS win message (.win )
             overlay.style.className = 'win';
             //block the overlay
             overlay.style.display = 'flex';
-            //create the message
-            gameMessage.textContent = 'Yay, you Won!'
+            //create the message: game.gameOver(true) shows message
+            gameMessage.textContent = "Yay, you're a Winner. What a genius!";
         }
     }
 
