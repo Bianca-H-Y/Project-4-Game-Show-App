@@ -61,6 +61,8 @@
     this.activePhrase.addPhraseToDisplay();
     
    }
+
+   start with next 3 sections 
    /** 
    handleInteraction(): letter must be choosen, letter checked against matches
   *     if a match display letter, if no match remove 1 life
