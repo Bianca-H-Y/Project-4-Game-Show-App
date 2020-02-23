@@ -16,3 +16,7 @@ const game = new Game();
 game.getRandomPhrase().addPhraseToDisplay();
 note:step 6 pass
 */
+const game = new Game();
+game.startGame();
+console.log('Active Phrase - phrase: ${game.activePhrase.phrase}');
+//Success!!--actually log not showing quote
