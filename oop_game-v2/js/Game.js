@@ -93,16 +93,43 @@
         return true;
         }
         }
+    //removeLife() removes a heart witha miss--end game by calling gameOver method
+      //https://teamtreehouse.com/community/how-can-i-target-a-picture-in-css-target the scr image step 9
+    //remove life from scoreboard
+    removeLife() {
+        // declare variable for all the hearts <li class="tries"><img src="images/liveHeart.png"
+        const hearts = document.querySelectorAll('tries');
+        //take the value of hearts available against the hearts left from the constroctor (this.missed) 
+        const heartsLeft = hearts.length - this.missed;
+        //if the player tries and misses than the players looses a heart/replace with lostheart.png
+        if (heartsLeft > 0){
+            hearts[this.missed].src= 'images/lostHeart.png';
+            //reduce hearts by one
+            hearts -= 1;
+        }
+        //when all 5 hearts = 0 then use gameove method to announce game lost
+        if (heartsLeft = 0){
+            this.gameOver(false);
+        }
+    }
    
-      
+    //gameOver() displays original start screen overlay and updats h1 with win or loose message
+    //from the CSS start with win or loose
+    gameOver(gameWon) {
+        //if the player looses then display the h1 CSS loose message
+        if(gameWon === false) {
+            //then display the h1 CSS loose message (.lose)
+            overlay.style.className = 'lose';
+            overlay.style.display = 'flex';
+            
+        } else if(gameWon === true) {
+            //then display the h1 CSS win message (.win )
+            overlay.style.className = 'win';
+            overlay.style.display = 'flex ';
 
-   }
+        }
+    }
     
-    //removeLife()
-
-   
-    //gameOver()
-
 };
 
 
