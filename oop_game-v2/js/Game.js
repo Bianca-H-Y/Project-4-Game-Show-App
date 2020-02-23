@@ -81,6 +81,7 @@
  */
  
  //Below code: checkForWin():  checks to see if player has revealed all letters 
+ //game.checkForWin() working for false & true 
    checkForWin() {
        //uses a boolen for true if game won and false is not
        let correctLetters = document.getElementsByClassName('hide letter');
@@ -97,10 +98,10 @@
       //https://teamtreehouse.com/community/how-can-i-target-a-picture-in-css-target the scr image step 9
     //remove life from scoreboard
     removeLife() {
-        // declare variable for all the hearts <li class="tries"><img src="images/liveHeart.png"
-        const hearts = document.querySelectorAll('tries');
+        // removed const variable and replaced with let for all the hearts <li class="tries"><img src="images/liveHeart.png"
+        let hearts = document.querySelectorAll('img');
         //take the value of hearts available against the hearts left from the constroctor (this.missed) 
-        const heartsLeft = hearts.length - this.missed;
+        let heartsLeft = hearts.length - this.missed;
         //if the player tries and misses than the players looses a heart/replace with lostheart.png
         if (heartsLeft > 0){
             hearts[this.missed].src= 'images/lostHeart.png';
@@ -108,7 +109,7 @@
             hearts -= 1;
         }
         //when all 5 hearts = 0 then use gameove method to announce game lost
-        if (heartsLeft = 0){
+        if (heartsLeft === 0){
             this.gameOver(false);
         }
     }

@@ -53,6 +53,7 @@
     });
   }
   //checkLetter() method :checks to see if player selections matches any letters in the phrase
+  //game.activePhrase.checkLetter('a') test working correctly
     checkLetter(letter) {
       const phrase = this.phrase;
       if(phrase.includes(letter)){
@@ -68,6 +69,7 @@
   * to reveal select all letter DOM elements w/ CSS class name that match letter
   * then replace w/ match with hide CSS class with Show CSS class
   * */
+ //game.activePhrase.showMatchedLetter('a') working
   showMatchedLetter(letter) {
     const phraseLetter = document.querySelectorAll('#phrase li');
     //iterates over each letter item and checks to see if there's a match
