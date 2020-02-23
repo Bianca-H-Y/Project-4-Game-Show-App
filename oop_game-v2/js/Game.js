@@ -125,19 +125,20 @@
     //game.removeLife() working to remove hearts & shows message at loss
     gameOver(gameWon) {
         const gameMessage = document.getElementById('game-over-message')
+        
         //if the player looses then display the h1 CSS loose message
         if(gameWon === false) {
             //then display the h1 CSS loose message (.lose)
-            overlay.style.className = 'lose';
+            overlay.className = 'lose';
             //block the overlay
-            overlay.style.display = 'flex';
+            overlay.style.display = '';
             //create the message: game.gameOver(false) shows message
             gameMessage.textContent = "Sorry, you lost! Click 'Start Game' to try again.";
         } else if(gameWon === true) {
             //then display the h1 CSS win message (.win )
-            overlay.style.className = 'win';
+            overlay.className = 'win';
             //block the overlay
-            overlay.style.display = 'flex';
+            overlay.style.display = '';
             //create the message: game.gameOver(true) shows message
             gameMessage.textContent = "Yay, you're a Winner. What a genius!";
         }
