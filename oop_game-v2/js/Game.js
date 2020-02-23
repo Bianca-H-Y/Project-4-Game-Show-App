@@ -62,7 +62,7 @@
     
    }
 
-   start with next 3 sections 
+
    /** 
    handleInteraction(): letter must be choosen, letter checked against matches
   *     if a match display letter, if no match remove 1 life
@@ -79,16 +79,24 @@
   *     from the CSS start with win or loose
  }
  */
-/** 
+ 
  //Below code: checkForWin():  checks to see if player has revealed all letters 
    checkForWin() {
        //uses a boolen for true if game won and false is not
-       //player will have 5 chances to get to win
-       //remember to target the: CSS class name matches the selected letter
-       let correctLetters = document.querySelectorAll('.show');
+       let correctLetters = document.getElementsByClassName('hide letter');
+    //player will have 5 chances to get to win
+   //check the length of correct letters if more than 0 return false-not a loose
+       if(correctLetters.length > 0){
+        return false;
+        } else {
+        //if less that zero the player looses
+        return true;
+        }
+        }
+   
+      
 
    }
-    */
     
     //removeLife()
 
