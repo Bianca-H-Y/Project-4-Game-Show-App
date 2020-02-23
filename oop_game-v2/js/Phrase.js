@@ -52,5 +52,31 @@
 
     });
   }
-    
+  //checkLetter() method :checks to see if player selections matches any letters in the phrase
+    checkLetter(letter) {
+      const phrase = this.phrase;
+      if(phrase.includes(letter)){
+        //uses booleans to show true is letters match and false if they do not
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+  /**showMatchedLetter():
+  * displays letters that match player selection if match found
+  * to reveal select all letter DOM elements w/ CSS class name that match letter
+  * then replace w/ match with hide CSS class with Show CSS class
+  * */
+  showMatchedLetter(letter) {
+    const phraseLetter = document.querySelectorAll('#phrase li');
+    //iterates over each letter item and checks to see if there's a match
+    phraseLetter.forEach(li=> {
+      if(li.textContent === letter) {
+        //if the letter selected matches a letter then show letter
+      li.classList.add('show');
+      li.classList.remove('hide');
+      }
+    })
+  }
     };

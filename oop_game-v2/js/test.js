@@ -174,4 +174,11 @@ newest:
  }
 };
 
+test phrase showMatchedLetter(letter) {
+  const phraseLetter = document.querySelectorAll('.letter');
+  if (phraseLetter = true) {
+    phraseLetter.classList.add('show');
+  } 
+}
+  };
 

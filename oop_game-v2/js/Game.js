@@ -10,10 +10,14 @@
   * Methods
   * startGame(): hides the start screen, calls getRandomPhrase() & sets active phrase property
   * getRandomPhrase(): randomly retrieves a phrase
-  * handleInteraction():
-  * removeLife():
-  * checkForWin():
-  * gameOver():
+  * handleInteraction(): letter must be choosen, letter checked against matches
+  *     if a match display letter, if no match remove 1 life
+  *     if win show all letter in phrase or lost if player loose all hearts
+  *     message about winning or loosing to display on screen
+  * removeLife(): removes a heart witha miss--end game by calling gameOver method
+  * checkForWin():  checks to see if player has revealed all letters (win)
+  * gameOver(): displays original start screen overlay and updats h1 with win or loose message
+  *     from the CSS start with win or loose
   */
  
  class Game {
@@ -57,6 +61,38 @@
     this.activePhrase.addPhraseToDisplay();
     
    }
+   /** 
+   handleInteraction(): letter must be choosen, letter checked against matches
+  *     if a match display letter, if no match remove 1 life
+  *     if win show all letter in phrase or lost if player loose all hearts
+  *     message about winning or loosing to display on screen
+  */
+
+  /** 
+    handleInteraction() { //the paremeter is going to be letter b/c we want the actions to happen on letters
+        //handles logic and branching to all following methods
+        removeLife(): removes a heart witha miss--end game by calling gameOver method
+  * checkForWin():  checks to see if player has revealed all letters (win)
+  * gameOver(): displays original start screen overlay and updats h1 with win or loose message
+  *     from the CSS start with win or loose
+ }
+ */
+/** 
+ //Below code: checkForWin():  checks to see if player has revealed all letters 
+   checkForWin() {
+       //uses a boolen for true if game won and false is not
+       //player will have 5 chances to get to win
+       //remember to target the: CSS class name matches the selected letter
+       let correctLetters = document.querySelectorAll('.show');
+
+   }
+    */
+    
+    //removeLife()
+
+   
+    //gameOver()
+
 };
 
 
