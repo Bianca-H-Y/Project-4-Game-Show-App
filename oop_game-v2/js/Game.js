@@ -89,11 +89,10 @@
         if (heartsLeft > 0){
             hearts[this.missed].src= 'images/lostHeart.png';
             //reduce hearts by one
-            hearts -= 1;
-            this.miss +=1;
+            heartsLeft -= 1;
         }
         //when all 5 hearts = 0 then use gameove method to announce game lost
-         else if (heartsLeft === 0){
+        if (heartsLeft === 0){
             //call the gameOver method if play has lost
             this.gameOver(false);
         
