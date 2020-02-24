@@ -84,6 +84,7 @@
         let hearts = document.querySelectorAll('[src="images/liveHeart.png"]');
         //take the value of hearts available against the hearts left from the constroctor (this.missed) 
         let heartsLeft = hearts.length - this.missed;
+        
         //if the player tries and misses than the players looses a heart/replace with lostheart.png
         if (heartsLeft > 0){
             hearts[this.missed].src= 'images/lostHeart.png';
@@ -134,23 +135,24 @@
     and call the showMatchedLetter method, and then call checkForWin()
     IF player wins then call gameOver().
   */
-     handleInteraction(letter) {
+     handleInteraction(button) {
+        console.log(button); //test app.js click event
         //disable selected letter's onscreen keyboard button
 
        // if a phrase doesn't have a guessed letter, add .wrong CSS class to selected letter's keyboard 
         //and call the removelife method
-        this.removeLife(); // method removes a heart with a players miss
+       // this.removeLife(); // method removes a heart with a players miss
         
         //if a phrase has have a guessed letter, add .chosen CSS class to selected letter's keyboard 
        // and call the showMatchedLetter method, and then call checkForWin()
        // IF player wins then call gameOver().
-    this.checkForWin(); //checks to see if player has revealed all letters 
-    this.gameOver();//displays original start screen overlay w/ win or loose message; set to true/not a loss in this method
+   // this.checkForWin(); //checks to see if player has revealed all letters 
+    //this.gameOver();//displays original start screen overlay w/ win or loose message; set to true/not a loss in this method
 
         
         
          
- }
+ };
 
  
     

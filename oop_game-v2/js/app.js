@@ -34,3 +34,13 @@ startButton.addEventListener('click', e => {
     game.startGame();
 });
 
+//Use event delegation & add a click event listener: target the <div id="qwerty" 
+//https://teamtreehouse.com/library/filter-invitees-who-have-not-responded perfect example in unit project
+qwerty.addEventListener('click', (e) => {
+    //limit event listener to button action
+    if(e.target.tagName === 'BUTTON') {
+        //call handleInteraction on the game object
+        game.handleInteraction(e.target);
+    }
+    
+});
