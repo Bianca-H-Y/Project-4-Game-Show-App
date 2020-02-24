@@ -124,6 +124,7 @@
             //create the message: game.gameOver(true) shows message
             gameMessage.textContent = "Yay, you're a Winner. What a genius!";
         }
+        this.resetGame();  
     }
 
     
@@ -148,6 +149,7 @@
                  // checkForWin() & IF player wins then call gameOver().
             if (this.checkForWin()) {
                 this.gameOver(true);
+            
             }
            
         }
@@ -157,9 +159,31 @@
             button.className = 'wrong';
             this.removeLife(); // method removes a heart with a players miss
             
-       }       
+       }  
+          
          
 };
 
-    
+//reset(): after a game is completed need to reset, so that the 'start game' button will successfully load a new game
+    resetGame() {
+//remove all 'Li' elements from the Phrase 'ul' element
+    const ulPhrase = document.querySelectorAll('#phrase ul'); //target the ul of phrase//TEST:all
+    ulPhrase[0].innerHTML = ' ';
+//target HTML element 'qwerty' 
+    let qwertyKey = document.querySelectorAll('#qwerty button'); 
+//I want to iterate over each qwerty Button and remove .chosen or .wrong so key is left
+    for (let i = 0; i < qwertyKey.length; i++) {
+        qwertyKey[i].disabled = false;
+        qwertyKey[i].classList.remove('wrong');
+        qwertyKey[i].classList.remove('chosen');
+}
+
+//reset all the heart images to display 'liveHeart.png'
+//Heart test working
+const newHearts = document.querySelectorAll('li img');
+    for (let j = 0; j < newHearts.length; j++) {
+        newHearts[j].src = 'images/liveHeart.png';
+    }
+        
+    }
 };
