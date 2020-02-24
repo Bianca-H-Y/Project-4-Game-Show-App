@@ -126,36 +126,40 @@
         }
     }
 
-    /** 
-   handleInteraction(): 
- 1: disable selected letter's onscreen keyboard button
- 2: if a phrase doesn't have a guessed letter, add .wrong CSS class to selected letter's keyboard 
-    and call the removelife method
-3:if a phrase has have a guessed letter, add .chosen CSS class to selected letter's keyboard 
-    and call the showMatchedLetter method, and then call checkForWin()
-    IF player wins then call gameOver().
-  */
-     handleInteraction(button) {
-        console.log(button); //test app.js click event
-        //disable selected letter's onscreen keyboard button
-
-       // if a phrase doesn't have a guessed letter, add .wrong CSS class to selected letter's keyboard 
-        //and call the removelife method
-       // this.removeLife(); // method removes a heart with a players miss
-        
-        //if a phrase has have a guessed letter, add .chosen CSS class to selected letter's keyboard 
-       // and call the showMatchedLetter method, and then call checkForWin()
-       // IF player wins then call gameOver().
-   // this.checkForWin(); //checks to see if player has revealed all letters 
-    //this.gameOver();//displays original start screen overlay w/ win or loose message; set to true/not a loss in this method
-
-        
-        
-         
- };
-
- 
     
+   //handleInteraction(): goal is to create game logic: checks for match and directs game action based in hit or miss of match
+     handleInteraction(button) {
+        //console.log(button); //test app.js click event--works
+        //disable selected letters onscreen keyboard button
+        button.disabled = true;
+        let buttonLetter = button.textContent;
+        //declare variable to checkletters against the active phrase
+        const matchedLetterCheck = this.activePhrase.checkLetter(buttonLetter);
+        
+      
+     
+        //checkletters against the active phrase
+        if(matchedLetterCheck){
+            // and call the showMatchedLetter method
+            this.activePhrase.showMatchedLetter(buttonLetter)
+             //if a phrase has have a guessed letter, add .chosen CSS class to selected letter's keyboard 
+            button.className = 'chosen';
+            button.disabled = false; //remove button disabiling when correct
+                 // checkForWin() & IF player wins then call gameOver().
+            if (this.checkForWin()) {
+                this.gameOver(true);
+            }
+           
+        }
+       //if a button is selected that doesn't match the phrase add the .wrong CSS class to selected letter's keyboard 
+        //and call the removelife method
+       else { 
+            button.className = 'wrong';
+            this.removeLife(); // method removes a heart with a players miss
+            
+       }       
+         
 };
 
-
+    
+};
