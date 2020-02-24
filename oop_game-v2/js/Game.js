@@ -62,25 +62,6 @@
     
    }
 
-
-   /** 
-   handleInteraction(): letter must be choosen, letter checked against matches
-  *     if a match display letter, if no match remove 1 life
-  *     if win show all letter in phrase or lost if player loose all hearts
-  *     message about winning or loosing to display on screen
-  */
-  // handleInteraction calls all the 3 methids above
-     // paremeter is going to be letter b/c we want the actions to happen on letters
-     handleInteraction(letter) {
-        //checks to see if player has revealed all letters 
-        this.checkForWin();
-         // method removes a heart with a players miss
-         this.removeLife();
-        //displays original start screen overlay w/ win or loose message; set to true/not a loss in this method
-        this.gameOver(true);
- }
-
- 
  //Below code: checkForWin():  checks to see if player has revealed all letters 
  //game.checkForWin() working for false & true 
    checkForWin() {
@@ -144,7 +125,34 @@
         }
     }
 
-    
+    /** 
+   handleInteraction(): 
+ 1: disable selected letter's onscreen keyboard button
+ 2: if a phrase doesn't have a guessed letter, add .wrong CSS class to selected letter's keyboard 
+    and call the removelife method
+3:if a phrase has have a guessed letter, add .chosen CSS class to selected letter's keyboard 
+    and call the showMatchedLetter method, and then call checkForWin()
+    IF player wins then call gameOver().
+  */
+     handleInteraction(letter) {
+        //disable selected letter's onscreen keyboard button
+
+       // if a phrase doesn't have a guessed letter, add .wrong CSS class to selected letter's keyboard 
+        //and call the removelife method
+        this.removeLife(); // method removes a heart with a players miss
+        
+        //if a phrase has have a guessed letter, add .chosen CSS class to selected letter's keyboard 
+       // and call the showMatchedLetter method, and then call checkForWin()
+       // IF player wins then call gameOver().
+    this.checkForWin(); //checks to see if player has revealed all letters 
+    this.gameOver();//displays original start screen overlay w/ win or loose message; set to true/not a loss in this method
+
+        
+        
+         
+ }
+
+ 
     
 };
 
