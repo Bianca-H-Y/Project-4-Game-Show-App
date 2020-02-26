@@ -82,17 +82,18 @@
     removeLife() {
         // removed const variable and replaced with let for all the hearts <li class="tries"><img src="images/liveHeart.png"
         let hearts = document.querySelectorAll('[src="images/liveHeart.png"]');
-        //take the value of hearts available against the hearts left from the constroctor (this.missed) 
-        let heartsLeft = hearts.length - this.missed;
-        
+        //heartsCount variable sets the available hearts
+        let heartsCount = hearts.length 
+        console.log(hearts)
         //if the player tries and misses than the players looses a heart/replace with lostheart.png
-        if (heartsLeft > 0){
+        if (heartsCount > 0){
             hearts[this.missed].src= 'images/lostHeart.png';
             //reduce hearts by one
-            heartsLeft -= 1;
+            heartsCount - this.missed;
+            heartsCount -= 1;
         }
         //when all 5 hearts = 0 then use gameove method to announce game lost
-        if (heartsLeft === 0){
+        if (heartsCount === 0){
             //call the gameOver method if play has lost
             this.gameOver(false);
         
