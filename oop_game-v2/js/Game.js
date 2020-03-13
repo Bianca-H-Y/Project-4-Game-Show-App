@@ -124,7 +124,8 @@
             //create the message: game.gameOver(true) shows message
             gameMessage.textContent = "Yay, you're a Winner. What a genius!";
         }
-        this.resetGame();  
+        this.resetGame(); 
+    
     }
 
     
