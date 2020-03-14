@@ -159,6 +159,9 @@ button {
   border-right: solid 3px rgba(0, 0, 0, 0);
 }
 
+.hide{
+  text-indent: -11111px;
+}
 
 /* Overlay */
 
